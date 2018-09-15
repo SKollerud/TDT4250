@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel"
+    modelDirectory="/tdt4250.steinar.coursePages/src-gen" creationIcons="false"
+    editDirectory="/tdt4250.steinar.coursePages.edit/src-gen" editorDirectory="/tdt4250.steinar.coursePages.editor/src-gen"
+    modelPluginID="tdt4250.steinar.coursePages" modelName="CoursePages" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    codeFormatting="true" importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0"
+    copyrightFields="false" operationReflection="true" importOrganizing="true">
+  <foreignModel>coursePages.ecore</foreignModel>
+  <testsDirectory xsi:nil="true"/>
+  <genPackages prefix="CoursePages" basePackage="tdt4250.steinar" disposableProviderFactory="true"
+      ecorePackage="coursePages.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="coursePages.ecore#//TermType">
+      <genEnumLiterals ecoreEnumLiteral="coursePages.ecore#//TermType/Spring"/>
+      <genEnumLiterals ecoreEnumLiteral="coursePages.ecore#//TermType/Summer"/>
+      <genEnumLiterals ecoreEnumLiteral="coursePages.ecore#//TermType/Fall"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="coursePages.ecore#//CourseWorkType">
+      <genEnumLiterals ecoreEnumLiteral="coursePages.ecore#//CourseWorkType/Lecture"/>
+      <genEnumLiterals ecoreEnumLiteral="coursePages.ecore#//CourseWorkType/Lab"/>
+      <genEnumLiterals ecoreEnumLiteral="coursePages.ecore#//CourseWorkType/Exercise"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="coursePages.ecore#//EvaluationType">
+      <genEnumLiterals ecoreEnumLiteral="coursePages.ecore#//EvaluationType/WrittenExam"/>
+      <genEnumLiterals ecoreEnumLiteral="coursePages.ecore#//EvaluationType/OralExam"/>
+      <genEnumLiterals ecoreEnumLiteral="coursePages.ecore#//EvaluationType/Assignments"/>
+      <genEnumLiterals ecoreEnumLiteral="coursePages.ecore#//EvaluationType/PracticalExam"/>
+      <genEnumLiterals ecoreEnumLiteral="coursePages.ecore#//EvaluationType/Participated"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="coursePages.ecore#//personRoleType">
+      <genEnumLiterals ecoreEnumLiteral="coursePages.ecore#//personRoleType/Lecture"/>
+      <genEnumLiterals ecoreEnumLiteral="coursePages.ecore#//personRoleType/CourseCordinator"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="coursePages.ecore#//PrecondistionType">
+      <genEnumLiterals ecoreEnumLiteral="coursePages.ecore#//PrecondistionType/Required"/>
+      <genEnumLiterals ecoreEnumLiteral="coursePages.ecore#//PrecondistionType/Recommended"/>
+    </genEnums>
+    <genClasses ecoreClass="coursePages.ecore#//Person">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute coursePages.ecore#//Person/firstName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute coursePages.ecore#//Person/surName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute coursePages.ecore#//Person/phoneNummber"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute coursePages.ecore#//Person/email"/>
+    </genClasses>
+    <genClasses ecoreClass="coursePages.ecore#//Student">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute coursePages.ecore#//Student/studentID"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference coursePages.ecore#//Student/studyprograms"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference coursePages.ecore#//Student/course"/>
+    </genClasses>
+    <genClasses ecoreClass="coursePages.ecore#//Employee">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute coursePages.ecore#//Employee/position"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference coursePages.ecore#//Employee/department"/>
+    </genClasses>
+    <genClasses ecoreClass="coursePages.ecore#//Department">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute coursePages.ecore#//Department/departmentName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute coursePages.ecore#//Department/phoneNummber"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute coursePages.ecore#//Department/email"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference coursePages.ecore#//Department/employee"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference coursePages.ecore#//Department/studyprograms"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference coursePages.ecore#//Department/course"/>
+    </genClasses>
+    <genClasses ecoreClass="coursePages.ecore#//StudyPrograms">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute coursePages.ecore#//StudyPrograms/studyProgramCode"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute coursePages.ecore#//StudyPrograms/studyProgramName"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference coursePages.ecore#//StudyPrograms/belongsToDepartment"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference coursePages.ecore#//StudyPrograms/student"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference coursePages.ecore#//StudyPrograms/course"/>
+    </genClasses>
+    <genClasses ecoreClass="coursePages.ecore#//EvaluationObject">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute coursePages.ecore#//EvaluationObject/evaluationsForm"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute coursePages.ecore#//EvaluationObject/term"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute coursePages.ecore#//EvaluationObject/credits"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute coursePages.ecore#//EvaluationObject/date"/>
+    </genClasses>
+    <genClasses ecoreClass="coursePages.ecore#//Evaluations">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference coursePages.ecore#//Evaluations/evaluationobject"/>
+    </genClasses>
+    <genClasses ecoreClass="coursePages.ecore#//CourseWorkObject">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute coursePages.ecore#//CourseWorkObject/courseWorkType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute coursePages.ecore#//CourseWorkObject/room"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute coursePages.ecore#//CourseWorkObject/day"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute coursePages.ecore#//CourseWorkObject/start"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute coursePages.ecore#//CourseWorkObject/end"/>
+    </genClasses>
+    <genClasses ecoreClass="coursePages.ecore#//CourseWork">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference coursePages.ecore#//CourseWork/courseworkobject"/>
+    </genClasses>
+    <genClasses ecoreClass="coursePages.ecore#//Course">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute coursePages.ecore#//Course/courseCode"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute coursePages.ecore#//Course/courseName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute coursePages.ecore#//Course/courseCredits"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute coursePages.ecore#//Course/courseContent"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference coursePages.ecore#//Course/courseinstance"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference coursePages.ecore#//Course/studyprograms"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference coursePages.ecore#//Course/courseworker"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference coursePages.ecore#//Course/precondition"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference coursePages.ecore#//Course/reduction"/>
+    </genClasses>
+    <genClasses ecoreClass="coursePages.ecore#//CourseInstance">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference coursePages.ecore#//CourseInstance/coursework"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference coursePages.ecore#//CourseInstance/evaluations"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute coursePages.ecore#//CourseInstance/courseYear"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute coursePages.ecore#//CourseInstance/term"/>
+    </genClasses>
+    <genClasses ecoreClass="coursePages.ecore#//CourseWorker">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute coursePages.ecore#//CourseWorker/courseRole"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference coursePages.ecore#//CourseWorker/employee"/>
+    </genClasses>
+    <genClasses ecoreClass="coursePages.ecore#//Precondition">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute coursePages.ecore#//Precondition/preconditionStatus"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference coursePages.ecore#//Precondition/course"/>
+    </genClasses>
+    <genClasses ecoreClass="coursePages.ecore#//Reduction">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute coursePages.ecore#//Reduction/creditReduction"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference coursePages.ecore#//Reduction/course"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>
